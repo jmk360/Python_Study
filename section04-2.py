@@ -17,6 +17,7 @@ print(escape_str2)
 print('aaaaaaaabbbbbbbbccccccccddddddd')
 
 # Raw String : escape string이 적용되지 않는다.
+# Raw String 버그 : 마지막 문자에 홀수개의 백슬래쉬가 올경우 SyntaxError 발생
 raw_s1 = r"\n\n\n"
 raw_s2 = r"C:\Programs\Test\Bin"
 raw_s3 = r'\\a\\a'
