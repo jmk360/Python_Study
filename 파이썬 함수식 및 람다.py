@@ -57,7 +57,7 @@ tp = func_mul3(100)
 print(tp, type(tp))
 
 # 예제5
-# *args, *kwargs
+# *args, **kwargs
 
 def args_func(*args):
     print(type(args))
@@ -150,4 +150,4 @@ def func_final(x, y, func):
 
 func_final(10, 10, lambda_mul_10)
 
-print(func_final(10, 10, lambda x: x * 1000))
+func_final(10, 10, lambda x: x * 1000)
