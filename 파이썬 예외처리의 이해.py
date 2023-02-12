@@ -162,4 +162,75 @@ except Exception as f:
 else:
     print('OK!')
 
+print()
+print()
+
 # 강의에서는 다루지 않았지만, 파이썬 사용자 정의 예외처리 에 대해서 개인적으로 공부를 하자!!
+
+# 사용자 정의 예외 처리
+# 사용 예시1
+class Example1Error(Exception):
+    pass
+
+def sample1_func():
+    try:
+        if True:
+            raise Example1Error
+    except Example1Error:
+        print("Example1Error 발생")
+
+sample1_func()   
+
+print()
+print()
+
+# 사용 예시2
+class Example2Error(Exception):
+    def __init__(self):
+        super().__init__("Example2Error 발생")
+
+def sample2_func():
+    try:
+        if True:
+            raise Example2Error
+    except Example2Error as e:
+        print(e)
+
+sample2_func()
+
+print()
+print()
+
+
+# 사용 예시3
+class Example3Error(Exception):
+    def __init__(self, a):
+        super().__init__(a)
+
+def sample3_func():
+    try:
+        if True:
+            raise Example3Error("Example3Error 발생")
+    except Example3Error as e:
+        print(e)
+
+sample3_func()
+
+print()
+print()
+
+# 사용 예시4
+class Example4Error(Exception):
+    def __init__(self, a):
+        self._a = a
+    def __str__(self): # __repr__(self) 로 사용해도 됨
+        return self._a
+
+def sample4_func():
+    try:
+        if True:
+            raise Example4Error("Example4Error 발생")
+    except Example4Error as e:
+        print(e)
+
+sample4_func()   

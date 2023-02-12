@@ -108,23 +108,3 @@ for v in lt:
     if type(v) is float:
         continue
     print("타입 : ", type(v))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
